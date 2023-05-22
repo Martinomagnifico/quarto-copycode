@@ -1,0 +1,35 @@
+title: CopyCode
+author:  Martijn De Jongh (Martino)
+version: 1.2.0
+quarto-required: ">=1.2.198"
+contributes:
+  revealjs-plugins:
+    -
+      name: CopyCode
+      script: copycode.js
+      stylesheet: copycode.css
+      config:
+        copycode:
+          button: 'always'
+          display: "text"
+          text:
+            copy: "Copy"
+            copied: "Copied!"
+          plaintextonly: true
+          timeout: 1000
+          style:
+            copybg: "orange"
+            copiedbg: "green"
+            copycolor: "black"
+            copiedcolor: "white"
+            copyborder: ""
+            copiedborder: ""
+            scale: 1
+            offset: 0
+            radius: 0
+          tooltip: true
+          iconsvg:
+            copy: ""
+            copied: ""
+          csspath: ""
+          clipboardjspath: ""

@@ -1,0 +1,303 @@
+---
+format:
+  revealjs:
+    code-overflow: wrap
+    code-line-numbers: false
+    center: true
+    theme: dark
+    navigation-mode: vertical
+    transition: slide
+    background-transition: fade
+    controls-layout: bottom-right
+    chalkboard: false
+    menu: false
+    css: style.css
+    section-divs: false
+    link-external-newwindow: true
+    copycode:
+      timeout: 1200
+
+revealjs-plugins:
+  - copycode
+
+---
+
+# Copycode
+For Reveal.js and Quarto
+\
+\
+\
+```js
+let why = `Because we always want to copy code 
+           during our presentations, right?`
+```
+
+
+# Works out of the box
+```js
+const http = require("http");
+http.createServer(function (request, response) {
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.end("Hello World\n");
+}).listen(8081);
+```
+
+A 'Copy' button is automatically added to any `pre` code block.
+
+Quarto already has copy-code buttons, but those are quite small, and thus not very visible for presentations.
+
+This extension replaces those buttons for use in Reveal.js Quarto presentations.
+
+
+
+# Setup
+
+## Basics
+
+There are really only three steps:
+
+1. Install CopyCode
+2. Copy your code from a code block
+2. Paste your code somewhere
+
+
+## Installation
+The following command installs the plugin for use with Quarto:
+
+```js
+quarto add martinomagnifico/quarto-copycode
+```
+<br>
+Now refer to the plugin in the YAML:
+
+```yaml
+format:
+  revealjs:
+    //...
+revealjs-plugins:
+  - copycode
+```
+
+# Now change it
+You can change the visibility, icon use 
+or texts easily per element:
+
+##
+### Change the visibility per element
+Turn it off
+
+````{.md data-cc="false"}
+```{.html data-cc="false"}
+<code>
+    Here is the code
+</code>
+```
+````
+
+Or show only on hover over the code block
+
+````{.md data-cc="hover"}
+```{.html data-cc="hover"}
+<code>
+    Here is the code
+</code>
+```
+````
+
+This can also be set globally. See [Global options](#global-options).<br/>
+Note: Hover-only codeblocks will *always* show the copy button on touch devices.
+
+##
+### Change the display of icons per element
+
+````{.md data-cc-display="icons"}
+```{.html data-cc-display="icons"}
+<code>
+    Here is the code
+</code>
+```
+````
+\
+
+````{.md data-cc-display="both"}
+```{.html data-cc-display="both"}
+<code>
+    Here is the code
+</code>
+```
+````
+
+This can also be set globally.See [Global options](#global-options).
+
+
+
+##
+### Change the text per element
+
+````{.md data-cc-copy="Copy HTML" data-cc-copied="Done"}
+```{.html data-cc-copy="Copy HTML" data-cc-copied="Done"}
+<code>
+    Here is the code
+</code>
+```
+````
+
+This can also be set globally. See [Global options](#global-options).
+
+
+
+
+
+# Global options {.center}
+
+The options below have user configurable options. In a regular Reveal.js presentation, these can be set through JavaScript, but Quarto makes it configurable through YAML options.
+
+::: columns
+::: {.column width="50%" style="font-size: 2rem"}
+1. button
+2. display
+3. text
+4. plaintextonly
+5. timeout
+:::
+
+::: {.column width="50%" style="font-size: 2rem"}
+6. style
+7. tooltip
+8. iconsvg
+9. csspath
+:::
+:::
+
+##
+### Option 1: button
+
+The `button` option is to show the button, always or only on hover. 
+
+``` yaml
+format:
+  revealjs:
+    //...
+    copycode:
+      button: 'always' # "always"|"hover"
+```
+
+##
+### Option 2: display
+
+The `display` option is to show text in the button, icons, or both.
+
+``` yaml
+format:
+  revealjs:
+    //...
+    copycode:
+      display: "text" # "text"|"icons"|"both"
+```
+
+##
+### Option 3: text
+
+The `text` option is an object that contains the texts for the 'copy' and 'copied' state.
+
+``` yaml
+format:
+  revealjs:
+    //...
+    copycode:
+      text:
+        copy: "Copy"
+        copied: "Copied!"
+```
+
+##
+### Option 4: plaintextonly
+
+The `plaintextonly` option can be set to false to allow copying of rich text and styles. 
+
+``` yaml
+format:
+  revealjs:
+    //...
+    copycode:
+      plaintextonly: true # true|false
+```
+
+##
+### Option 5: timeout
+
+The `timeout` option is the time in milliseconds for the "Copied!"-state to revert back to "Copy". 
+
+``` yaml
+format:
+  revealjs:
+    //...
+    copycode:
+      timeout: 1000
+```
+
+##
+### Option 6: style
+
+The `style` option is an object that contains settings for background colors, colors, sizing, spacing and border styles.
+
+``` yaml
+format:
+  revealjs:
+    //...
+    copycode:
+      style:
+        copybg: "orange"
+        copiedbg: "green"
+        copycolor: "black"
+        copiedcolor: "white"
+        copyborder: ""
+        copiedborder: ""
+        scale: 1
+        offset: 0
+        radius: 0
+```
+
+
+##
+### Option 7: tooltip
+
+The `timeout` option makes sure that the 'copied' text is shown in a tooltip, when an icon-only button display is used. 
+
+``` yaml
+format:
+  revealjs:
+    //...
+    copycode:
+      tooltip: true # true|false
+```
+
+
+##
+### Option 8: iconsvg
+
+The `iconsvg` option is an object with placeholders for SVG icons for the 'copy' and 'copied' state. If left empty, it will use the default icons.
+
+``` yaml
+format:
+  revealjs:
+    //...
+    copycode:
+      iconsvg:
+        copy: ''   # User can paste <svg>…</svg> code here
+        copied: '' # User can paste <svg>…</svg> code here
+```
+
+##
+### Option 9: csspath
+
+The `csspath` option can be used when the you want to use your own stylesheet, instead of the provided one. 
+
+``` yaml
+format:
+  revealjs:
+    //...
+    copycode:
+      csspath: ''
+```
+Use this if you really want to change things that you can't override from the Reveal.js config, like the padding and so on.
