@@ -11,7 +11,7 @@ format:
     controls-layout: bottom-right
     chalkboard: false
     menu: false
-    css: style.css
+    css: docs/style.css
     section-divs: false
     link-external-newwindow: true
     copycode:
