@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.1.7] - 2024-01-01
+### Changed
+- Version parity with the regular CopyCode plugin.
+
+
 ## [1.1.2] - 2023-06-08
 ### Changed
 - Removed font-size rule for pre's.

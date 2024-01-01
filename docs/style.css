@@ -1,6 +1,7 @@
 :root {
   --r-heading-text-transform: none ;
-	--r-background-color: #1a1626;
+  --r-background-color: #051525;
+  --code-full-bg: #142433;
 }
 .center {
 	text-align: center
@@ -52,6 +53,7 @@
 .reveal .sourceCode pre code, .reveal .sourceCode pre code {
   overflow: hidden !important;
   white-space: pre-wrap !important;
+  background: var(--code-full-bg);
 }
 
 .reveal p code, .reveal p kbd, .reveal ul code {

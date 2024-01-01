@@ -1,15 +1,19 @@
-/*
- ****************************************************************
- * @author: Martijn De Jongh (Martino), martijn.de.jongh@gmail.com
- * https://github.com/Martinomagnifico
+
+/*****************************************************************
  *
- * CopyCode.js for Reveal.js
- * Version 1.1.2
+ * CopyCode for Reveal.js 
+ * Version 1.1.7
  * 
+ * @author: Martijn De Jongh (Martino), martijn.de.jongh@gmail.com
+ * https://github.com/martinomagnifico
+ *
  * @license 
  * MIT licensed
- *****************************************************************
-*/
+ * 
+ * Copyright (C) 2024 Martijn De Jongh (Martino)
+ *
+ ******************************************************************/
+
 :root {
   --cc-copy-bg: orange;
   --cc-copied-bg: green;
@@ -23,12 +27,13 @@
   --cc-copiedborder: 0;
 }
 
-.reveal pre, .codeblock {
+.reveal pre,
+.codeblock {
   width: 100%;
 }
 
 .codeblock {
-  margin: 20px auto;
+  margin: var(--r-block-margin) auto;
   position: relative;
 }
 .sourceCode .codeblock {
@@ -37,13 +42,15 @@
 .codeblock pre .code-copy-button {
   display: none;
 }
+.codeblock code.hljs {
+  min-height: 1.2em;
+}
 .codeblock > button {
   opacity: 0.5;
   z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: absolute;
+  max-height: 100%;
   right: 0;
   right: calc(var(--cc-offset, 0) * 1em);
   top: 0;
@@ -60,13 +67,8 @@
   font-size: calc(var(--cc-scale, 1) * 1.5rem);
   line-height: 1.25em;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  -webkit-transition: background-color 0.25s ease-in-out, opacity 0.25s ease-in-out;
-  -o-transition: background-color 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  transform: translate3d(0, 0, 0);
   transition: background-color 0.25s ease-in-out, opacity 0.25s ease-in-out;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -85,12 +87,9 @@
 }
 .codeblock > button[data-cc-display=icons] span {
   line-height: 1.25em;
-  -webkit-transform: translate3d(-100%, -50%, 1px);
-          transform: translate3d(-100%, -50%, 1px);
+  transform: translate3d(-100%, -50%, 1px);
   pointer-events: none;
   opacity: 0;
-  -webkit-transition: all 0.15s ease-in-out;
-  -o-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
   font-size: 1.2rem;
   position: absolute;
@@ -111,8 +110,7 @@
   position: absolute;
   right: 0;
   top: 50%;
-  -webkit-transform: translate3d(45%, -50%, -1px) rotate(45deg);
-          transform: translate3d(45%, -50%, -1px) rotate(45deg);
+  transform: translate3d(45%, -50%, -1px) rotate(45deg);
 }
 .codeblock > button[data-cc=hover] {
   opacity: 0;
