@@ -4,11 +4,11 @@
 
 A quarto extension for [Reveal.js](https://revealjs.com) that automatically shows a 'copy' button in code blocks.
 
-[![Screenshot](https://martinomagnifico.github.io/reveal.js-copycode/screenshot.png)](https://martinomagnifico.github.io/quarto-copycode/docs/demo.html)
+[![Screenshot](https://martinomagnifico.github.io/reveal.js-copycode/screenshot.png)](https://martinomagnifico.github.io/quarto-copycode/demo.html)
 
 In presentations we can show blocks of code. This plugin for Reveal.js adds a 'copy' button to each of those. Because you might just want to copy a piece of code during such a presentation.
 
-[Demo](https://martinomagnifico.github.io/quarto-copycode/docs/demo.html)
+[Demo](https://martinomagnifico.github.io/quarto-copycode/demo.html)
 
 It's easy to set up. If your code blocks are set up like this:
 
