@@ -195,4 +195,4 @@ If you like it, please star this repo.
 ## License
 MIT licensed
 
-Copyright (C) 2023 Martijn De Jongh (Martino)
+Copyright (C) 2024 Martijn De Jongh (Martino)
